@@ -1,7 +1,7 @@
 import React, { Suspense, useState, useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Stage, PerspectiveCamera, Float, Html, Sky, ContactShadows, Environment } from '@react-three/drei';
-import { Sparkles, Play, Info, Layers, Maximize2, Move, Home, Camera } from 'lucide-react';
+import { Sparkles, Info, Layers, Maximize2, Move, Home, Camera } from 'lucide-react';
 
 // HIGH-END ARCHITECTURAL VILLA COMPONENT
 const LuxuryVillaModel = () => {
