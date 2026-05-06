@@ -12,7 +12,6 @@ import ValuationWizard from './components/ValuationWizard';
 import LoadingScreen from './components/LoadingScreen';
 import WelcomePopup from './components/WelcomePopup';
 import ConciergeAI from './components/ConciergeAI';
-import VirtualTour from './components/VirtualTour';
 
 const App = () => {
   const [isWizardOpen, setIsWizardOpen] = useState(false);
@@ -64,7 +63,6 @@ const App = () => {
           <Navbar onOpenWizard={() => setIsWizardOpen(true)} />
           <Hero onOpenWizard={() => setIsWizardOpen(true)} />
           <PortfolioSection />
-          <VirtualTour />
           <SocialProof />
           <Protocol />
           <AppointmentSection />
