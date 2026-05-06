@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #0F172A;
+  --accent: #C5A059;
+  --accent-light: #E2C27D;
+  --background: #000000;
+  --text-main: #FFFFFF;
+  --text-muted: #94A3B8;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--background);
+    @apply text-text-main;
+  }
+  body {
+    @apply bg-background text-text-main font-sans selection:bg-accent selection:text-white overflow-x-hidden;
+    font-family: 'Sora', sans-serif;
+  }
+}
+
+/* Global Noise Overlay */
+.noise-overlay {
+  @apply fixed inset-0 pointer-events-none z-[9999] opacity-[0.03];
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3%3Cfilter id='noiseFilter'%3%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Premium UI Tokens */
+.font-drama { font-family: 'Instrument Serif', serif; }
+
+.magnetic-button {
+  @apply relative overflow-hidden transition-all duration-500 ease-out hover:scale-[1.02] active:scale-[0.98];
+}
+
+.magnetic-button::before {
+  content: '';
+  @apply absolute inset-0 bg-white/10 translate-y-full transition-transform duration-500 ease-out;
+}
+
+.magnetic-button:hover::before {
+  @apply translate-y-0;
+}
+
+.shadow-premium {
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
+@keyframes scanline {
+  0% { top: 0%; opacity: 0; }
+  5% { opacity: 1; }
+  95% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+.animate-scanline {
+  animation: scanline 4s linear infinite;
+}
